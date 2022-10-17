@@ -31,6 +31,16 @@ const Header = (props) => <h1>{props.title}</h1>
 
 const Btn = ({handle, title}) => <button onClick={handle}>{title}</button>
 
-const Statistics  = ({title, total}) => <p>{title} {total}</p>
+const Statistics  = ({title, total}) => {
+  if(good === 0 && neutral === 0 && bad === 0) {
+    return (
+      <p>{title} {total}</p>
+    );
+  } else {
+    return (
+      <p>No feedback given</p>
+    );
+  }
+}
 
 export default App
