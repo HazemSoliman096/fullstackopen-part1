@@ -17,12 +17,12 @@ const App = () => {
       <Btn handle={handleNeutral} title={"neutral"} />
       <Btn handle={handleBad} title={"bad"} />
       <Header title={"statistics"}/>
-      <Stat title={"good"} total={good} />
-      <Stat title={"neutral"} total={neutral} />
-      <Stat title={"bad"} total={bad} />
-      <Stat title={"all"} total={good + neutral + bad} />
-      <Stat title={"average"} total={(good - bad) / (good + neutral + bad)} />
-      <Stat title={"positive"} total={(good / (good + neutral + bad)) + ' %'} />
+      <Statistics  title={"good"} total={good} />
+      <Statistics  title={"neutral"} total={neutral} />
+      <Statistics  title={"bad"} total={bad} />
+      <Statistics  title={"all"} total={good + neutral + bad} />
+      <Statistics  title={"average"} total={(good - bad) / (good + neutral + bad)} />
+      <Statistics  title={"positive"} total={(good / (good + neutral + bad)) + ' %'} />
     </div>
   )
 }
@@ -31,6 +31,6 @@ const Header = (props) => <h1>{props.title}</h1>
 
 const Btn = ({handle, title}) => <button onClick={handle}>{title}</button>
 
-const Stat = ({title, total}) => <p>{title} {total}</p>
+const Statistics  = ({title, total}) => <p>{title} {total}</p>
 
 export default App
