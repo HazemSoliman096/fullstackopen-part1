@@ -17,12 +17,7 @@ const App = () => {
       <Btn handle={handleNeutral} title={"neutral"} />
       <Btn handle={handleBad} title={"bad"} />
       <Header title={"statistics"}/>
-      <Statistics  title={"good"} total={good} />
-      <Statistics  title={"neutral"} total={neutral} />
-      <Statistics  title={"bad"} total={bad} />
-      <Statistics  title={"all"} total={good + neutral + bad} />
-      <Statistics  title={"average"} total={(good - bad) / (good + neutral + bad)} />
-      <Statistics  title={"positive"} total={(good / (good + neutral + bad)) + ' %'} />
+      <Statistics good={good} neutral={neutral} bad={bad} />
     </div>
   )
 }
@@ -31,14 +26,21 @@ const Header = (props) => <h1>{props.title}</h1>
 
 const Btn = ({handle, title}) => <button onClick={handle}>{title}</button>
 
-const Statistics  = ({title, total}) => {
+const Statistics  = ({good, neutral, bad}) => {
   if(good === 0 && neutral === 0 && bad === 0) {
     return (
-      <p>{title} {total}</p>
+      <p>No feedback given</p>
     );
   } else {
     return (
-      <p>No feedback given</p>
+      <>
+        <p>good {good}</p>
+        <p>neutral {neutral}</p>
+        <p>bad {bad}</p>
+        <p>all {good + neutral + bad}</p>
+        <p>average {(good - bad) / (good + neutral + bad)}</p>
+        <p>positive {good / (good + neutral + bad)}</p>
+      </>
     );
   }
 }
