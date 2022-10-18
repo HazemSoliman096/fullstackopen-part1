@@ -14,3 +14,5 @@
   5. 1.10: unicafe step5.
   6. 1.11*: unicafe step6.
 - anectode:
+  1. 1.12*: anecdotes step1.
+  2. 1.12*: anecdotes step1.
